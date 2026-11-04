@@ -1,0 +1,13 @@
+{
+  "name": "kitchenpulse",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c green,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:ml": "python3 -m uvicorn main:app --reload --port 8000 --app-dir ml-service",
+    "build": "npm run build --prefix client",
+    "start": "npm run build && npm start --prefix server",
+    "test": "npm test --prefix server"
+  },
+  "devDependencies": { "concurrently": "^8.2.2" }
+}
