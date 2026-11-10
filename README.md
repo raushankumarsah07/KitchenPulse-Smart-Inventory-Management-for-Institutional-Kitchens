@@ -4,12 +4,12 @@ A full-stack web app for college canteens and hostel messes. It tracks stock, wa
 expiry, records waste, and uses machine learning to forecast demand and suggest what to buy, with the
 working shown.
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 18 (Vite), Chart.js, Framer Motion, hand-written CSS design system (light and dark) |
-| Backend | Node.js, Express, JWT + bcrypt, zod validation |
-| Database | MongoDB (Mongoose) |
-| ML service | Python, FastAPI, pandas, NumPy, scikit-learn |
+| Layer      | Technology                                                                                |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| Frontend   | React 18 (Vite), Chart.js, Framer Motion, hand-written CSS design system (light and dark) |
+| Backend    | Node.js, Express, JWT + bcrypt, zod validation                                            |
+| Database   | MongoDB (Mongoose)                                                                        |
+| ML service | Python, FastAPI, pandas, NumPy, scikit-learn                                              |
 
 ## Run it (about 5 minutes)
 
@@ -39,17 +39,17 @@ screen at once. Run `npm test` for the backend end-to-end tests (needs MongoDB).
 
 ## How it maps to your presentation
 
-| Slide / module | Where it lives |
-|---|---|
-| Dashboard | `client/src/pages/Dashboard.jsx`, `server/src/routes/dashboard.js` |
-| Inventory management | `Inventory.jsx`, `routes/ingredients.js` |
+| Slide / module                            | Where it lives                                                                                                                    |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Dashboard                                 | `client/src/pages/Dashboard.jsx`, `server/src/routes/dashboard.js`                                                                |
+| Inventory management                      | `Inventory.jsx`, `routes/ingredients.js`                                                                                          |
 | Expiry tracking, first-expiring-first-out | `server/src/services/stock.js` (`deduct`): batches are consumed earliest-expiry first and expired stock is never used for cooking |
-| Smart alerts | `services/alerts.js` (out of stock, low, expiring, expired) + the bell in the top bar |
-| Demand forecasting | `ml-service/main.py` + `routes/forecast.js` + `Forecast.jsx` |
-| Waste tracking | `Waste.jsx`, `routes/waste.js`: cost is taken from the exact batches wasted |
-| Reports | `Reports.jsx`, `routes/reports.js`: period summary, per ingredient, per day, CSV export, print |
-| Explainable purchase suggestion | predicted need + safety stock − usable stock − pending delivery = buy |
-| JWT + bcrypt | `routes/auth.js`, `middleware/auth.js` |
+| Smart alerts                              | `services/alerts.js` (out of stock, low, expiring, expired) + the bell in the top bar                                             |
+| Demand forecasting                        | `ml-service/main.py` + `routes/forecast.js` + `Forecast.jsx`                                                                      |
+| Waste tracking                            | `Waste.jsx`, `routes/waste.js`: cost is taken from the exact batches wasted                                                       |
+| Reports                                   | `Reports.jsx`, `routes/reports.js`: period summary, per ingredient, per day, CSV export, print                                    |
+| Explainable purchase suggestion           | predicted need + safety stock − usable stock − pending delivery = buy                                                             |
+| JWT + bcrypt                              | `routes/auth.js`, `middleware/auth.js`                                                                                            |
 
 ## How the forecast works (be ready to explain this in your viva)
 
