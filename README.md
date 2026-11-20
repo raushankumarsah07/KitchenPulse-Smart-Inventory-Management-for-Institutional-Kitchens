@@ -82,5 +82,3 @@ Evaluate on real canteen records before claiming accuracy.
 
 Frontend on Vercel (set `VITE_API_URL` to your API URL), API and ML service on Render or similar, database on
 MongoDB Atlas. Set `CLIENT_ORIGIN` on the API to your frontend URL and `ML_SERVICE_URL` to the ML service URL.
-
-<!-- chages in code  -->
